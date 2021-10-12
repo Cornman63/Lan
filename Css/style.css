@@ -319,10 +319,7 @@ figcaption{
             }
             @media only screen and (max-width: 600px) {
            
-            [class*="col-"] {
-              width: 100%;
-            }
-            
+           
             body{
                 background-color: black;
             }
@@ -338,7 +335,7 @@ figcaption{
                 display: block;
                 color: white;
                 text-align: center;
-                padding: 20px 2% 17.5px 2%;
+                padding: 20px 1% 20px 1%;
                 text-decoration: none;
                 font-family:Verdana, Geneva, Tahoma, sans-serif;
                 }
@@ -349,8 +346,8 @@ figcaption{
               }
             
               #NTIlogo{
-                  width: 13%;
-                  height: 30%;
+                  width: 24%;
+                  height: 35%;
                   margin-left: 25px;
                   margin-top: 2.5px;
               }
@@ -462,7 +459,7 @@ figcaption{
               grid-template-columns: 20% 30%;
               margin-left: 5%;
               background-color: black;
-              opacity: 40%;
+              opacity: 80%;
              
               }
               .container-time {
@@ -474,30 +471,30 @@ figcaption{
                 
                 }
                 .heading {
-                  font-size: 35px;
+                  font-size: 17.5px;
                   text-transform: uppercase;
                   }
                   
                   .heading-days {
                   color:#3C1053FF;
-                  font-size: 30px;
+                  font-size: 15px;
                  
                   
                   }
                   
                   .heading-phone {
-                  font-size: 20px;
+                  font-size: 10px;
                   
                   }
                   .container-form {
-                    padding: 20px 0;
+                    padding: 10px 0;
                     margin: 0 auto;
                     color: white;
                    
                     }
                     form {
                       display: grid;
-                      grid-row-gap: 20px;
+                      grid-row-gap: 10px;
                      
                       }
                       form p {
@@ -510,20 +507,20 @@ figcaption{
                       }
                       
                       input,select {
-                      padding: 10px 15px;
+                      padding: 5px 7.5px;
                       }
                       .btn {
                         background-color: #3C1053FF;
                         color: #fff;
-                        padding: 10px 20px;
+                        padding: 5px 10px;
                         border: none;
                         font-size: 18px;
-                        border-radius: 100px;
-                        -webkit-border-radius: 100px;
-                        -moz-border-radius: 100px;
-                        -ms-border-radius: 100px;
-                        -o-border-radius: 100px;
-                        box-shadow: 7px 10px 12px rgb(#DF6589FF);
+                        border-radius: 50px;
+                        -webkit-border-radius: 50px;
+                        -moz-border-radius: 50px;
+                        -ms-border-radius: 50px;
+                        -o-border-radius: 50px;
+                        box-shadow: 3.5px 5px 6px rgb(#DF6589FF);
                         cursor: pointer;
                         transition: all .3s;
                         -webkit-transition: all .3s;
