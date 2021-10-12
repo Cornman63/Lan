@@ -468,32 +468,34 @@ grid-template-columns: 40% 60%;
 margin-left: 10%;
 background-color: black;
 opacity: 80%;
-
+font-size: small;
 }
 .info{
   font-size: 10%;
 }
 #break{
-  width: 60%;
-  margin-left: 20%;
+  width: 57%;
+  margin-left: 21%;
 }
 .container-time {
   background-color: rgba(0, 0, 0, .95);
-  padding: 1px;
+  padding: 30px ;
   outline: 1px dashed #3C1053FF;
   outline-offset: -30px;
   text-align: center;
+  font-size: small;
   
   }
   .heading {
     font-size: 19px;
     text-transform: uppercase;
+    font-size: small;
     }
     
     .heading-days {
     color:#3C1053FF;
     font-size: 19px;
-   
+    font-size: small;
     
     }
     
@@ -502,10 +504,10 @@ opacity: 80%;
     
     }
     .container-form {
-      padding: 10px -10px;
-      margin: 0 auto;
+      padding: 10px ;
+      margin: 50px auto;
       color: white;
-     
+      font-size: small;
       }
       form {
         display: grid;
@@ -525,7 +527,9 @@ opacity: 80%;
       width: 52%;
       height: 50%;
       margin-right: 25%;
+      font-size: 50%;
     }
+   
         input,select {
         padding: 1px 1px;
         }
