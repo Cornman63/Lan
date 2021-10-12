@@ -454,7 +454,7 @@ figcaption{
             }
             .container {
              color: white;
-              margin: 55px;
+              margin: px;
               box-shadow: 5px 7.5px 10px rgba(0, 0, 0, .1);
               display: grid;
               grid-template-columns: 20% 30%;
@@ -465,38 +465,41 @@ figcaption{
               }
               .container-time {
                 background-color: rgba(0, 0, 0, .95);
-                padding: 25px;
-                outline: 1.5px dashed #3C1053FF;
-                outline-offset: -15px;
+                padding: 1px,;
+                outline: -1px dashed #3C1053FF;
+                outline-offset: -15px, -15px;
                 text-align: center;
                 
                 }
                 .heading {
-                  font-size: 17.5px;
+                  font-size: 10px;
                   text-transform: uppercase;
                   }
                   
                   .heading-days {
                   color:#3C1053FF;
-                  font-size: 15px;
+                  font-size: 12px;
                  
                   
                   }
+                  p{
+                    font-size: 10px;
+                  }
                   
                   .heading-phone {
-                  font-size: 10px;
+                  font-size: 5px;
                   
                   }
                   .container-form {
-                    padding: 10px 0;
+                    padding: 5px 0;
                     margin: 0 auto;
                     color: white;
                    
                     }
                     form {
                       display: grid;
-                      grid-row-gap: 10px;
-                     
+                      grid-row-gap: 2.5px;
+                      margin-left: 20%;
                       }
                       form p {
                       font-weight: 600;
