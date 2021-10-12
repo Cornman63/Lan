@@ -456,9 +456,12 @@ background-color: cadetblue;
 #discordjoin{
 padding: 0.2vh 30% 0.2vh 30%;
 }
+.obs{
+  font-size: 50%;
+}
 .container {
 color: white;
-margin: 110px;
+margin: 20px;
 box-shadow: 10px 15px 20px rgba(0, 0, 0, .1);
 display: grid;
 grid-template-columns: 40% 60%;
@@ -467,59 +470,67 @@ background-color: black;
 opacity: 80%;
 
 }
+.info{
+  font-size: 10%;
+}
+#break{
+  width: 60%;
+  margin-left: 20%;
+}
 .container-time {
   background-color: rgba(0, 0, 0, .95);
-  padding: 50px;
-  outline: 3px dashed #3C1053FF;
+  padding: 1px;
+  outline: 1px dashed #3C1053FF;
   outline-offset: -30px;
   text-align: center;
   
   }
   .heading {
-    font-size: 35px;
+    font-size: 20px;
     text-transform: uppercase;
     }
     
     .heading-days {
     color:#3C1053FF;
-    font-size: 30px;
+    font-size: 20px;
    
     
     }
     
     .heading-phone {
-    font-size: 20px;
+    font-size: 10px;
     
     }
     .container-form {
-      padding: 20px 0;
+      padding: 10px -10px;
       margin: 0 auto;
       color: white;
      
       }
       form {
         display: grid;
-        grid-row-gap: 20px;
+        grid-row-gap: 5px;
        
         }
+      
         form p {
-        font-weight: 600;
+        font-weight: 300;
         }
         .form-field {
         display: flex;
         justify-content: space-between;
         
         }
-        
+    
         input,select {
-        padding: 10px 15px;
+        padding: 1px 1px;
         }
         .btn {
           background-color: #3C1053FF;
           color: #fff;
-          padding: 10px 20px;
+          padding: 5px 10px;
           border: none;
-          font-size: 18px;
+          font-size: 14px;
           border-radius: 100px;
           -webkit-border-radius: 100px;
           -moz-border-radius: 100px;
@@ -550,7 +561,7 @@ opacity: 80%;
           }
           .tables .section {
             margin-top: 1px;
-            margin-left: 20%;
+            margin-left: 16%;
           
             
           }
@@ -570,14 +581,14 @@ opacity: 80%;
             color: black;
             text-decoration: none;
             display: inline-block;
-            font-size: 20px;
-            padding: 15px;
+            font-size: 10px;
+            padding: 1px;
             background-color: #00b402;
             transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-            width: 30px;
-            height: 30px;
+            width: 20px;
+            height: 20px;
             text-align: center;
-            line-height: 30px;
+            line-height: 20px;
             
           }
           
