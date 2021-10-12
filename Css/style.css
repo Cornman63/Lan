@@ -482,7 +482,7 @@ font-size: small;
 }
 .container-time {
   background-color: rgba(0, 0, 0, .95);
-  padding: 50px ;
+  padding: 30px ;
   outline: 1px dashed #3C1053FF;
   outline-offset: -30px;
   text-align: center;
