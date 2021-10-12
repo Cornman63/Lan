@@ -46,12 +46,19 @@ body{
     background-repeat: repeat-y;
     background-color: black;
   }
-  #container
+  #containeer
   {
     background: rgba(0, 0, 0, 0.7);
     margin-left: 15%;
     width: 70%;
     height: 100%;
+  }
+  #container
+  {
+    background: rgba(0, 0, 0, 0.7);
+    margin-left: 15%;
+    width: 70%;
+    height: 85vh;
   }
 
   #infocontainer
@@ -367,12 +374,19 @@ li a:hover {
   background-repeat: repeat-y;
   background-color: black;
 }
-#container
+#containeer
 {
   background: rgba(0, 0, 0, 0.7);
   margin-left: 15%;
   width: 70%;
   height: 100%;
+}
+#container
+{
+  background: rgba(0, 0, 0, 0.7);
+  margin-left: 15%;
+  width: 70%;
+  height: 85vh;
 }
 
 #infocontainer
