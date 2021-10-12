@@ -474,7 +474,7 @@ font-size: small;
   font-size: 10%;
 }
 .infoo{
-  font-size: 5%;
+  font-size: 1%;
 }
 #break{
   width: 57%;
@@ -482,7 +482,7 @@ font-size: small;
 }
 .container-time {
   background-color: rgba(0, 0, 0, .95);
-  padding: 30px ;
+  padding: 31px ;
   outline: 1px dashed #3C1053FF;
   outline-offset: -30px;
   text-align: center;
