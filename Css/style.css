@@ -387,19 +387,19 @@ li a:hover {
   padding-top: 10%;
   text-align: center;
   color: white;
-  font-size: 400%;
+  font-size: 200%;
 }
 
 #maindate{
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   text-align: center;
   color: white;
-  font-size: 300%;
+  font-size: 150%;
 }
 
 .regbtn{
-  margin: 10vh 0 0 35%;
-  padding: 5% 10% 5% 10%;
+  margin: 7vh 0 0 28%;
+  padding: 5% 5% 5% 5%;
   background-color: #8600c8;
   cursor: pointer;
   color: white;
