@@ -2,7 +2,21 @@
     margin: 0;
     padding: 0;
 }
-
+@media only screen and (min-width: 700px) {
+  /* For tablets: */
+  .col-s-1 {width: 8.33%;}
+  .col-s-2 {width: 16.66%;}
+  .col-s-3 {width: 25%;}
+  .col-s-4 {width: 33.33%;}
+  .col-s-5 {width: 41.66%;}
+  .col-s-6 {width: 50%;}
+  .col-s-7 {width: 58.33%;}
+  .col-s-8 {width: 66.66%;}
+  .col-s-9 {width: 75%;}
+  .col-s-10 {width: 83.33%;}
+  .col-s-11 {width: 91.66%;}
+  .col-s-12 {width: 100%;}
+}
 body{
     background-color: black;
 }
@@ -39,9 +53,11 @@ body{
   .flow{
     background-image: url(https://www.newlightwc.org/x/cdn/?https://storage.googleapis.com/production-homestead-v1-0-9/049/25049/t7RbyTHz/75f24d3764224b1ea8d1891193e37cde);
     background-size: cover;
-    height: 85vh;
+    height: 100%;
     padding:0;
     margin:0;
+    background-repeat: repeat-y;
+    background-color: black;
   }
   #container
   {
@@ -138,7 +154,9 @@ figcaption{
   box-shadow: 10px 15px 20px rgba(0, 0, 0, .1);
   display: grid;
   grid-template-columns: 40% 60%;
-  margin-left: 20%;
+  margin-left: 10%;
+  background-color: black;
+  opacity: 80%;
  
   }
   .container-time {
@@ -147,6 +165,7 @@ figcaption{
     outline: 3px dashed #3C1053FF;
     outline-offset: -30px;
     text-align: center;
+    
     }
     .heading {
       font-size: 35px;
@@ -156,20 +175,24 @@ figcaption{
       .heading-days {
       color:#3C1053FF;
       font-size: 30px;
+     
       
       }
       
       .heading-phone {
       font-size: 20px;
+      
       }
       .container-form {
         padding: 20px 0;
         margin: 0 auto;
         color: white;
+       
         }
         form {
           display: grid;
           grid-row-gap: 20px;
+         
           }
           form p {
           font-weight: 600;
@@ -177,6 +200,7 @@ figcaption{
           .form-field {
           display: flex;
           justify-content: space-between;
+          
           }
           
           input,select {
@@ -218,7 +242,8 @@ figcaption{
             }
             .tables .section {
               margin-top: 1px;
-              margin-left: 30%;
+              margin-left: 20%;
+            
               
             }
             
@@ -229,6 +254,7 @@ figcaption{
               height: auto;
               display: flex;
               flex-direction: row;
+              
             }
             
             .tables ul li a {
@@ -244,6 +270,7 @@ figcaption{
               height: 30px;
               text-align: center;
               line-height: 30px;
+              
             }
             
             .tables ul li a:hover {
@@ -296,5 +323,11 @@ figcaption{
             .tooltip:hover .tooltiptext {
               visibility: visible;
             }
+            #Con{
+              background-color: black;
+              width: 60%;
+              margin-left: 20%;
+            }
+           
             
             
