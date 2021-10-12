@@ -461,7 +461,7 @@ padding: 0.2vh 30% 0.2vh 30%;
 }
 .container {
 color: white;
-margin: 20px;
+margin: 34px;
 box-shadow: 10px 15px 20px rgba(0, 0, 0, .1);
 display: grid;
 grid-template-columns: 40% 60%;
@@ -486,19 +486,19 @@ opacity: 80%;
   
   }
   .heading {
-    font-size: 20px;
+    font-size: 19px;
     text-transform: uppercase;
     }
     
     .heading-days {
     color:#3C1053FF;
-    font-size: 20px;
+    font-size: 19px;
    
     
     }
     
     .heading-phone {
-    font-size: 10px;
+    font-size: 8px;
     
     }
     .container-form {
