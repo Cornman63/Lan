@@ -2,9 +2,7 @@
     margin: 0;
     padding: 0;
 }
-[class*="col-"] {
-  width: 100%;
-}
+
 
 body{
     background-color: black;
@@ -317,324 +315,323 @@ figcaption{
               width: 60%;
               margin-left: 20%;
             }
-            @media only screen and (max-width: 700px) {
+
+
+@media only screen and (max-width: 629px) {
            
            
-            body{
-                background-color: black;
-                width: 100%;
+body{
+  background-color: black;
+}
+
+.navul {
+  list-style-type: none;
+  overflow: hidden;
+  background-color: black;
+} 
+
+li a {
+  float: right;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 40px 4% 35px 4%;
+  text-decoration: none;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+li a:hover {
+  color: #DF6589FF;
+  background-color: #3C1053FF;
+}
+
+#NTIlogo{
+    width: 25%;
+    height: 100%;
+    margin-left: 50px;
+    margin-top: 5px;
+}
+
+
+.flow{
+  background-image: url(https://www.newlightwc.org/x/cdn/?https://storage.googleapis.com/production-homestead-v1-0-9/049/25049/t7RbyTHz/75f24d3764224b1ea8d1891193e37cde);
+  background-size: cover;
+  height: 100%;
+  padding:0;
+  margin:0;
+  background-repeat: repeat-y;
+  background-color: black;
+}
+#container
+{
+  background: rgba(0, 0, 0, 0.7);
+  margin-left: 15%;
+  width: 70%;
+  height: 85vh;
+}
+
+#infocontainer
+{
+    width: 100%;
+    height: 180vh;
+    background-color: #240536;
+}
+
+#maintext{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  padding-top: 10%;
+  text-align: center;
+  color: white;
+  font-size: 400%;
+}
+
+#maindate{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  text-align: center;
+  color: white;
+  font-size: 300%;
+}
+
+.regbtn{
+  margin: 10vh 0 0 35%;
+  padding: 5% 10% 5% 10%;
+  background-color: #8600c8;
+  cursor: pointer;
+  color: white;
+  border: black solid 2px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.regbtn:hover {
+  color: whitesmoke;
+  background-color: #430064;
+}
+
+#regreg{
+  margin: 20vh 0 0 30%;
+  padding: 15%;
+}
+
+
+
+/* Information */
+
+.para{
+color: white;
+width: 80%;
+margin: 0 0 5vh 10%;
+padding-top: 10vh;
+font-size: 100%;
+}
+
+
+/* Contact */
+
+figure{
+border: black solid 2px;
+width: 25%;
+margin-top: 20vh;
+margin-left: 6%;
+float: left;
+}
+
+.figimg{
+width: 100%;
+height: 150px;
+}
+
+figcaption{
+padding: 2vh;
+text-align: center;
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+background-color: cadetblue;
+}
+
+#discordjoin{
+padding: 0.2vh 30% 0.2vh 30%;
+}
+.container {
+color: white;
+margin: 110px;
+box-shadow: 10px 15px 20px rgba(0, 0, 0, .1);
+display: grid;
+grid-template-columns: 40% 60%;
+margin-left: 10%;
+background-color: black;
+opacity: 80%;
+
+}
+.container-time {
+  background-color: rgba(0, 0, 0, .95);
+  padding: 50px;
+  outline: 3px dashed #3C1053FF;
+  outline-offset: -30px;
+  text-align: center;
+  
+  }
+  .heading {
+    font-size: 35px;
+    text-transform: uppercase;
+    }
+    
+    .heading-days {
+    color:#3C1053FF;
+    font-size: 30px;
+   
+    
+    }
+    
+    .heading-phone {
+    font-size: 20px;
+    
+    }
+    .container-form {
+      padding: 20px 0;
+      margin: 0 auto;
+      color: white;
+     
+      }
+      form {
+        display: grid;
+        grid-row-gap: 20px;
+       
+        }
+        form p {
+        font-weight: 600;
+        }
+        .form-field {
+        display: flex;
+        justify-content: space-between;
+        
+        }
+        
+        input,select {
+        padding: 10px 15px;
+        }
+        .btn {
+          background-color: #3C1053FF;
+          color: #fff;
+          padding: 10px 20px;
+          border: none;
+          font-size: 18px;
+          border-radius: 100px;
+          -webkit-border-radius: 100px;
+          -moz-border-radius: 100px;
+          -ms-border-radius: 100px;
+          -o-border-radius: 100px;
+          box-shadow: 7px 10px 12px rgb(#DF6589FF);
+          cursor: pointer;
+          transition: all .3s;
+          -webkit-transition: all .3s;
+          -moz-transition: all .3s;
+          -ms-transition: all .3s;
+          -o-transition: all .3s;
+          }
+          
+          .btn:hover {
+          transform: scale(1.03);
+          -webkit-transform: scale(1.03);
+          -moz-transform: scale(1.03);
+          -ms-transform: scale(1.03);
+          -o-transform: scale(1.03);
+          box-shadow: 10px 12px 15px rgb(#DF6589FF);
+          
+          }
+          h3 {
+            margin-top: 2%;
+            color: white;
+            text-align: center;
+          }
+          .tables .section {
+            margin-top: 1px;
+            margin-left: 20%;
+          
+            
+          }
+          
+          .tables ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            height: auto;
+            display: flex;
+            flex-direction: row;
+            
+          }
+          
+          .tables ul li a {
+            position: relative;
+            color: black;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 20px;
+            padding: 15px;
+            background-color: #00b402;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            
+          }
+          
+          .tables ul li a:hover {
+            background-color: #33c335;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+            cursor: pointer;
+            z-index: 1;
+          }
+          
+          .tables ul li a.booked {
+            background-color: #4b0082;
+          }
+          
+          .tables ul li a.selected {
+            box-shadow: inset 0px 0px 0px 5px #4b0082;
+          }
+          
+          .tables ul li a.taken {
+            background-color: #750000;
+            cursor: initial;
+          }
+          
+          .tables ul li a.taken:hover {
+            background-color: #913333;
+          }
+          .tooltip {
+            position: relative;
+            display: inline-block;
+            border-bottom: 1px dotted black;
+          }
+          
+          .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 120px;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px 0;
+          
+            /* Position the tooltip */
+          
+              width: 120px;
+              bottom: 100%;
+              left: 50%;
+              margin-left: -60px; /* Use half of the width (120/2 = 60), to center the tooltip */
             }
+          
+          
+          .tooltip:hover .tooltiptext {
+            visibility: visible;
+          }
+          #Con{
+            background-color: black;
+            width: 60%;
+            margin-left: 20%;
+          }
             
-             .navul {
-                list-style-type: none;
-                overflow: hidden;
-                background-color: black;
-              } 
-              
-              li a {
-                float: right;
-                display: block;
-                color: white;
-                text-align: center;
-                padding: 20px 1% 20px 1%;
-                text-decoration: none;
-                font-family:Verdana, Geneva, Tahoma, sans-serif;
-                }
-              
-              li a:hover {
-                color: #DF6589FF;
-                background-color: #3C1053FF;
-              }
-            
-              #NTIlogo{
-                  width: 24%;
-                  height: 35%;
-                  margin-left: 25px;
-                  margin-top: 2.5px;
-              }
-            
-            
-              .flow{
-                background-image: url(https://www.newlightwc.org/x/cdn/?https://storage.googleapis.com/production-homestead-v1-0-9/049/25049/t7RbyTHz/75f24d3764224b1ea8d1891193e37cde);
-                background-size: cover;
-                height: 50%;
-                padding:0;
-                margin:0;
-                background-repeat: repeat-y;
-                background-color: black;
-              }
-              #container
-              {
-                background: rgba(0, 0, 0, 0.7);
-                margin-left: 7.5%;
-                width: 35%;
-                height: 40vh;
-              }
-            
-              #infocontainer
-              {
-                  width: 50%;
-                  height: 90vh;
-                  background-color: #240536;
-              }
-            
-              #maintext{
-                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-                padding-top: 5%;
-                text-align: center;
-                color: white;
-                font-size: 200%;
-              }
-            
-              #maindate{
-                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-                text-align: center;
-                color: white;
-                font-size: 150%;
-              }
-            
-              .regbtn{
-                margin: 5vh 0 0 17.5%;
-                padding: 2.5% 5% 2.5% 5%;
-                background-color: #8600c8;
-                cursor: pointer;
-                color: white;
-                border: black solid 2px;
-                text-align: center;
-                font-size: 8px;
-              }
-              
-              .regbtn:hover {
-                color: whitesmoke;
-                background-color: #430064;
-              }
-            
-              #regreg{
-                margin: 10vh 0 0 15%;
-                padding: 7.5%;
-              }
-            
-            
-            
-            /* Information */
-            
-            .para{
-              color: white;
-              width: 40%;
-              margin: 0 0 2.5vh 5%;
-              padding-top: 10vh;
-              font-size: 100%;
-            }
-            
-            
-            /* Contact */
-            
-            figure{
-              border: black solid 2px;
-              width: 12.5%;
-              margin-top: 10vh;
-              margin-left: 3%;
-              float: left;
-            }
-            
-            .figimg{
-              width: 50%;
-              height: 75px;
-            }
-            
-            figcaption{
-              padding: 1vh;
-              text-align: center;
-              font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-              background-color: cadetblue;
-            }
-            
-            #discordjoin{
-              padding: 0.1vh 15% 0.1vh 15%;
-            }
-            .container {
-             color: white;
-              margin: px;
-              box-shadow: 2px 5px 2px rgba(0, 0, 0, .1);
-              display: grid;
-              grid-template-columns: 30% 10%;
-              margin-left: 10%;
-              background-color: black;
-              opacity: 80%;
-             
-              }
-              .container-time {
-                background-color: rgba(0, 0, 0, .95);
-                padding: 100px,;
-                outline: -1px dashed #3C1053FF;
-                outline-offset: -15px, -15px;
-                text-align: center;
-                
-                }
-                .heading {
-                  font-size: 10px;
-                  text-transform: uppercase;
-                  }
-                  
-                  .heading-days {
-                  color:#3C1053FF;
-                  font-size: 12px;
-                 
-                  
-                  }
-                  p{
-                    font-size: 10px;
-                  }
-                  
-                  .heading-phone {
-                  font-size: 5px;
-                  
-                  }
-                  .container-form {
-                    padding: 5px 0;
-                    margin: 0 auto;
-                    color: white;
-                   
-                    }
-                    form {
-                      display: grid;
-                      grid-row-gap: 2.5px;
-                      margin-left: 20%;
-                      }
-                      form p {
-                      font-weight: 600;
-                      }
-                      .form-field {
-                      display: flex;
-                      justify-content: space-between;
-                      
-                      }
-                      
-                      input,select {
-                      padding: 5px 7.5px;
-                      }
-                      .btn {
-                        background-color: #3C1053FF;
-                        color: #fff;
-                        padding: 5px 10px;
-                        border: none;
-                        font-size: 18px;
-                        border-radius: 50px;
-                        -webkit-border-radius: 50px;
-                        -moz-border-radius: 50px;
-                        -ms-border-radius: 50px;
-                        -o-border-radius: 50px;
-                        box-shadow: 3.5px 5px 6px rgb(#DF6589FF);
-                        cursor: pointer;
-                        transition: all .3s;
-                        -webkit-transition: all .3s;
-                        -moz-transition: all .3s;
-                        -ms-transition: all .3s;
-                        -o-transition: all .3s;
-                        }
-                        
-                        .btn:hover {
-                        transform: scale(1.03);
-                        -webkit-transform: scale(1.03);
-                        -moz-transform: scale(1.03);
-                        -ms-transform: scale(1.03);
-                        -o-transform: scale(1.03);
-                        box-shadow: 10px 12px 15px rgb(#DF6589FF);
-                        
-                        }
-                        h3 {
-                          margin-top: 2%;
-                          color: white;
-                          text-align: center;
-                        }
-                        .tables .section {
-                          margin-top: 1px;
-                          margin-left: 20%;
-                        
-                          
-                        }
-                        
-                        .tables ul {
-                          list-style-type: none;
-                          padding: 0;
-                          margin: 0;
-                          height: auto;
-                          display: flex;
-                          flex-direction: row;
-                          
-                        }
-                        
-                        .tables ul li a {
-                          position: relative;
-                          color: black;
-                          text-decoration: none;
-                          display: inline-block;
-                          font-size: 10px;
-                          padding: 7.5px;
-                          background-color: #00b402;
-                          transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-                          width: 15px;
-                          height: 15px;
-                          text-align: center;
-                          line-height: 15px;
-                          
-                        }
-                        
-                        .tables ul li a:hover {
-                          background-color: #33c335;
-                          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-                          cursor: pointer;
-                          z-index: 1;
-                        }
-                        
-                        .tables ul li a.booked {
-                          background-color: #4b0082;
-                        }
-                        
-                        .tables ul li a.selected {
-                          box-shadow: inset 0px 0px 0px 5px #4b0082;
-                        }
-                        
-                        .tables ul li a.taken {
-                          background-color: #750000;
-                          cursor: initial;
-                        }
-                        
-                        .tables ul li a.taken:hover {
-                          background-color: #913333;
-                        }
-                        .tooltip {
-                          position: relative;
-                          display: inline-block;
-                          border-bottom: 1px dotted black;
-                        }
-                        
-                        .tooltip .tooltiptext {
-                          visibility: hidden;
-                          width: 60px;
-                          background-color: black;
-                          color: #fff;
-                          text-align: center;
-                          border-radius: 3px;
-                          padding: 2.5px 0;
-                        
-                          /* Position the tooltip */
-                        
-                            width: 60px;
-                            bottom: 50%;
-                            left: 50%;
-                            margin-left: -60px; /* Use half of the width (120/2 = 60), to center the tooltip */
-                          }
-                        
-                        
-                        .tooltip:hover .tooltiptext {
-                          visibility: visible;
-                        }
-                        #Con{
-                          background-color: black;
-                          width: 60%;
-                          margin-left: 20%;
-                        }
             }
            
             
