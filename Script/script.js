@@ -1,11 +1,18 @@
-function required(inputtx) 
-   {
-     if (inputtx.value.length == 0)
-      { 
-         alert("message");  	
-         return false; 
-      }  	
-      return true; 
-    } 
+GolbalURL = "http://www.yourserverpathtophpfile.com";
 
-    document.querySelector("#vue > div.centerHorinzontal > div:nth-child(3) > div > div:nth-child(4) > ul:nth-child(1) > li:nth-child(4) > span > a")
+var cname = $("[name='cname']").val();
+var cnumber = $("[name='cnumber']").val();
+var cemail = $("[name='cemail']").val();
+
+jQuery.ajax({
+ type: "POST",
+ url: GolbalURL+"sendemail.php",
+
+ data: "cname="+ cname+"& cnumber="+ cnumber+"& cemail="+ cemail,
+ dataType: "html",      
+ cache: false,
+ success: function(response)
+ {
+   alert("Email Sent");
+ }
+});
