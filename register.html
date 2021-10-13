@@ -48,47 +48,6 @@
                 <p class="info">Nedan hittar ni lediga platser.</p>
             </div>
 
-            <script>
-                function sendMail() {
-
-                    let name_ = document.getElementById("name")
-                    let email_ = document.getElementById("email")
-                    let tel_ = document.getElementById("tel")
-                    let bordnummer_ = document.getElementById("bordnummer")
-                    let error_text = document.getElementById('error-text')
-
-                    let field_items = [name_, email_, tel_, bordnummer_]
-
-                    field_items.forEach(e => {
-                        e.style.backgroundColor = (e.value == "") ? "red" : ""
-                    });
-
-                    if (name_.value == "" || email_.value == "" || tel_.value == "" || bordnummer_.value == ""){
-                        error_text.innerHTML = "Fyll i alla fält innan du skickar in"
-                        error_text.style.color = "red"
-                        return
-                    }
-                    
-                    error_text.innerHTML = "Din ansökan skickas via mail, om det inte öppnats automatiskt, kontakta mej breh"
-                    error_text.style.color = "green"
-
-                    var link = 
-                        "mailto:mike.zogheib@elev.ga.ntig.se" +
-                        "?subject=" + encodeURIComponent("NTI LAN 2021") +
-                        "&body=" + encodeURIComponent(
-                            [
-                                "Name: " + name_.value,
-                                "Email: " + email_.value,
-                                "Tel: " + tel_.value,
-                                "Bordsnummer: " + bordnummer_.value
-                            ].join("\n")
-                        )
-                    ;
-                    
-                    window.location.href = link;
-                }
-            </script>
-
             <div class="container-form">
                 <form onsubmit="sendMail();return false" action="#" target="_top" method="POST" enctype="text/email/tel">
                     <h2 class="heading heading-yellow">Boka Plats</h2>
@@ -105,10 +64,12 @@
                         <p class="info">Mobilnummer:</p>
                         <input id="tel" type="tel" name="telefon nummer" placeholder="Mobilnummer">
                     </div>
-
-                    <p class="info">Bordsnummer:</p>
-                    <p></p>
-                    <input id="bordnummer" type="text" name="Bordsnummer" placeholder="Bordsnummer">
+                    <div class="form-field">
+                        <p class="info">Bordsnummer:</p>
+                        <select id="bordnummer"  name="">
+                            <option value="" selected disabled hidden>Bordsnummer</option>
+                        </select>
+                    </div>
 
                     <p id="error-text"></p>
                     <button class="btn">Submit</button>
@@ -120,12 +81,15 @@
             <h3 class="obs">Välj en plats och skriv in Bordsnummer på platsen du valt för boka den.</h3>
             <h3 class="obs">Grön: Tillgänglig</h3>
             <h3 class="obs"> Röd :Bokad</h3>
-            <div class="tables">
+            <!-- <div class="tables">
                 <div class="section">
                     <ul class="row">
-                        <li><span class="hasTooltip"><a class="">
-                                    1
-                                </a> <span class="tooltipText"></span></span></li>
+                        <li>
+                            <span class="hasTooltip">
+                                <a class="">1</a>
+                                <span class="tooltipText"></span>
+                            </span>
+                        </li>
                         <li><span class="hasTooltip"><a class="">
                                     2
                                 </a> <span class="tooltipText"></span></span></li>
@@ -338,13 +302,179 @@
                                 </a> <span class="tooltipText"></span></span></li>
                     </ul>
                 </div>
-            </div>
-
+            </div> -->
         </div>
+        <script>
+
+            var booking = {
+                1: "",
+                2: "",
+                3: "",
+                4: "",
+                5: "",
+                6: "",
+                7: "",
+                8: "",
+                9: "",
+                10: "",
+                11: "",
+                12: "",
+                13: "",
+                14: "",
+                15: "",
+                16: "",
+                17: "",
+                18: "",
+                19: "",
+                20: "",
+                21: "",
+                22: "",
+                23: "",
+                24: "",
+                25: "",
+                26: "",
+                27: "",
+                28: "",
+                29: "",
+                30: "",
+                31: "",
+                32: "",
+                33: "",
+                34: "",
+                35: "",
+                36: "",
+                37: "",
+                38: "",
+                39: "",
+                40: "",
+                41: "",
+                42: "",
+                43: "",
+                44: "",
+                45: "",
+                46: "",
+                47: "",
+                48: "",
+                49: "Victor Andri",
+                50: "",
+                51: "",
+                52: "",
+                53: "",
+                54: "",
+                55: "",
+                56: "",
+                57: "Daniel Askling",
+                58: "Zarah Isaksson",
+                59: "Isak Karlsen",
+                60: "Sanna Öberg",
+                61: "Henrik Dahlén",
+                62: "Casper Dahlberg",
+                63: "Felix Lamu",
+                64: "Aston Martin"
+            }
+
+            function createTable(){
+                let dest = document.getElementById('Con')
+
+                let main_div = document.createElement("div")
+                main_div.classList.add("tables")
+
+                let index = 0;
+
+                for (let i = 0; i < 4; i++) {
+                    let section_div = document.createElement("div")
+                    section_div.classList.add("section")
+
+                    for (let i2 = 0; i2 < 2; i2++) {
+                        let row_ul = document.createElement("ul")
+                        row_ul.classList.add("row")
+
+                        for (let i3 = 0; i3 < 8; i3++) {
+                            index += 1
+
+                            let li = document.createElement("li")
+                            li.title = booking[index]
+
+                            let a = document.createElement("a")
+                            if (booking[index] != ""){
+                                a.classList.add("taken")
+                            }
+                            a.innerHTML = index
+                            a.onclick = function() {
+                                document.querySelector(`#bordnummer > option[value="${this.innerHTML}"]`).selected = true;
+                                document.querySelector("div.container").scrollIntoView();
+                            }
+                            
+                            li.appendChild(a)
+                            row_ul.appendChild(li)
+                        }
+
+                        section_div.appendChild(row_ul)   
+                    }
+
+                    main_div.appendChild(section_div)
+                }
+
+                dest.appendChild(main_div)
+            }
+
+            createTable()
+        </script>
 
     </div>
 
-    <script src="Javas/script.js"></script>
+    <script src="Script/script.js"></script>
+
+    <script>
+        function sendMail() {
+            let name_ = document.getElementById("name")
+            let email_ = document.getElementById("email")
+            let tel_ = document.getElementById("tel")
+            let bordnummer_ = document.getElementById("bordnummer")
+            let error_text = document.getElementById('error-text')
+
+            let field_items = [name_, email_, tel_, bordnummer_]
+
+            field_items.forEach(e => {
+                e.style.backgroundColor = (e.value == "") ? "red" : ""
+            });
+
+            if (name_.value == "" || email_.value == "" || tel_.value == "" || bordnummer_.value == ""){
+                error_text.innerHTML = "Fyll i alla fält innan du skickar in"
+                error_text.style.color = "red"
+                return
+            }
+
+            error_text.innerHTML = "Din ansökan skickas via mail, om det inte öppnats automatiskt, kontakta mej breh"
+            error_text.style.color = "green"
+
+            var link = 
+                "mailto:mike.zogheib@elev.ga.ntig.se" +
+                "?subject=" + encodeURIComponent("NTI LAN 2021") +
+                "&body=" + encodeURIComponent(
+                    [
+                        "Name: " + name_.value,
+                        "Email: " + email_.value,
+                        "Tel: " + tel_.value,
+                        "Bordsnummer: " + bordnummer_.value
+                    ].join("\n")
+                )
+            ;
+
+            window.location.href = link;
+        };
+
+        let dropdown_numbers = document.getElementById('bordnummer')
+
+        document.querySelectorAll('div#Con > div.tables a:not(.taken)').forEach(e => {
+            let option = document.createElement("option")
+            
+            option.value = e.innerHTML.trim()
+            option.innerText = e.innerHTML.trim()
+
+            dropdown_numbers.appendChild(option)
+        });
+    </script>
 </body>
 
 </html>
