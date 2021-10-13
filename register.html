@@ -49,18 +49,48 @@
             </div>
 
             <script>
-                function sendMail(text) {
-                        var link = "mailto:mike.zogheib@elev.ga.ntig.se"
-                                + "?subject=" + encodeURIComponent("NTI LAN 2021")
-                                + "&body=" + encodeURIComponent(text)
-                        ;
-                        
-                        window.location.href = link;
+                function sendMail() {
+
+                    let name_ = document.getElementById("name")
+                    let email_ = document.getElementById("email")
+                    let tel_ = document.getElementById("tel")
+                    let bordnummer_ = document.getElementById("bordnummer")
+                    let error_text = document.getElementById('error-text')
+
+                    let field_items = [name_, email_, tel_, bordnummer_]
+
+                    field_items.forEach(e => {
+                        e.style.backgroundColor = (e.value == "") ? "red" : ""
+                    });
+
+                    if (name_.value == "" || email_.value == "" || tel_.value == "" || bordnummer_.value == ""){
+                        error_text.innerHTML = "Fyll i alla fält innan du skickar in"
+                        error_text.style.color = "red"
+                        return
                     }
+                    
+                    error_text.innerHTML = "Din ansökan skickas via mail, om det inte öppnats automatiskt, kontakta mej breh"
+                    error_text.style.color = "green"
+
+                    var link = 
+                        "mailto:mike.zogheib@elev.ga.ntig.se" +
+                        "?subject=" + encodeURIComponent("NTI LAN 2021") +
+                        "&body=" + encodeURIComponent(
+                            [
+                                "Name: " + name_.value,
+                                "Email: " + email_.value,
+                                "Tel: " + tel_.value,
+                                "Bordsnummer: " + bordnummer_.value
+                            ].join("\n")
+                        )
+                    ;
+                    
+                    window.location.href = link;
+                }
             </script>
 
             <div class="container-form">
-                <form action="" target="_top" method="POST" enctype="text/email/tel">
+                <form onsubmit="sendMail();return false" action="#" target="_top" method="POST" enctype="text/email/tel">
                     <h2 class="heading heading-yellow">Boka Plats</h2>
 
                     <div class="form-field">
@@ -69,17 +99,19 @@
                     </div>
                     <div class="form-field">
                         <p class="info">Email:</p>
-                        <input type="email" name="email" placeholder="Email">
+                        <input id="email" type="email" name="email" placeholder="Email">
                     </div>
                     <div class="form-field">
                         <p class="info">Mobilnummer:</p>
-                        <input type="tel" name="telefon nummer" placeholder="Mobilnummer">
+                        <input id="tel" type="tel" name="telefon nummer" placeholder="Mobilnummer">
                     </div>
 
                     <p class="info">Bordsnummer:</p>
                     <p></p>
-                    <input type="text" name="Bordsnummer" placeholder="Bordsnummer">
-                    <button class="btn" onclick="sendMail('hej hej')">Submit</button>
+                    <input id="bordnummer" type="text" name="Bordsnummer" placeholder="Bordsnummer">
+
+                    <p id="error-text"></p>
+                    <button class="btn">Submit</button>
                 </form>
             </div>
         </div>
