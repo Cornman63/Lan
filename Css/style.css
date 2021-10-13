@@ -895,6 +895,12 @@ font-size: small;
         input,select {
         padding: 1px 1px;
         }
+        #bordnummer{
+          width: 110%;
+          margin-right: 20%;
+          height: 90%;
+          font-size: 40% ;
+        }
         .btn {
           background-color: #3C1053FF;
           color: #fff;
