@@ -1,4 +1,4 @@
-api_url = "https://lan.gettime.ga/"
+const api_url = "https://lan.gettime.ga/"
 
 function send_API_request(url){
     var send_API_request_response;
@@ -15,16 +15,16 @@ function send_API_request(url){
     return send_API_request_response;
 }
 
-function sendBookingRequest(){
-    document.forms['booking-form']['name']
-
-    let name_ =  document.forms['booking-form']['name']
-    let tel_ =  document.forms['booking-form']['telefon-nummer']
-    let bordnummer_ =  document.forms['booking-form']['bordnummer']
+function sendMail(){
+    let name_ = document.getElementById("name")
+    // let email_ = document.getElementById("email")
+    let tel_ = document.getElementById("tel")
+    let bordnummer_ = document.getElementById("bordnummer")
     let error_text = document.getElementById('error-text')
 
     let field_items = [
         name_,
+        // email_,
         tel_,
         bordnummer_
     ]
@@ -35,6 +35,7 @@ function sendBookingRequest(){
 
     if (
         name_.value == "" ||
+        // email_.value == "" ||
         tel_.value == "" ||
         bordnummer_.value == ""
         ){
@@ -71,11 +72,11 @@ function updateBooking(){
 }
 
 function createTable(){
-    let dest = document.getElementsByClassName('booking-map')[0]
+    let dest = document.getElementById('Con')
 
     try {
         document.querySelector("div.tables").remove()
-    } catch (error){}
+    } catch {}
 
     let main_div = document.createElement("div")
     main_div.classList.add("tables")
@@ -103,7 +104,7 @@ function createTable(){
                 a.innerHTML = index
                 a.onclick = function() {
                     document.querySelector(`#bordnummer > option[value="${this.innerHTML}"]`).selected = true;
-                    // document.querySelector("div.container").scrollIntoView();
+                    document.querySelector("div.container").scrollIntoView();
                 }
                 
                 li.appendChild(a)
@@ -122,7 +123,7 @@ function createTable(){
 function updateSeatDropdown(){
     let dropdown_numbers = document.getElementById('bordnummer')
 
-    document.querySelectorAll('div.booking-map > div.tables a:not(.taken)').forEach(e => {
+    document.querySelectorAll('div#Con > div.tables a:not(.taken)').forEach(e => {
         let option = document.createElement("option")
         
         option.value = e.innerHTML.trim()
@@ -148,16 +149,10 @@ function update_spaces_left_span(){
             spaces_booked += 1
         }
     })
-    try {
-        document.getElementById("spaces-left-span").innerText = `${spaces_booked}/${total_spaces}` 
-    } catch (error) {}
-    
+
+    document.getElementById("spaces-left-span").innerText = `${spaces_booked}/${total_spaces}`
 }
 
 var booking = {}
 
 refreshBookingTable()
-
-
-
-document.querySelector("div.booking-form > button.book-button").onclick = sendBookingRequest;

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="sv">
+    <title> LAN register</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="Css/style.css">
+    <link rel="icon" href="Img/download.jfif" type="image/icon type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+    <ul class="navul">
+        <li><a href="document/lan_lapp (1).docx">Lan blankett</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="information.html">Information</a></li>
+        <li><a href="register.html" style="background-color: #240536;">Register</a></li>
+        <li><a href="index.html">Home</a></li>
+        <a href="index.html"><li><img src="Img/ntivitcrop.png" alt="NTIlogo" id="NTIlogo"/></li></a>
+    </ul>
+    <div class="flow">
+        <h3 class="obs">Obs. Detta är endast för elever som går eller har gått i NTI Södertörn, Elever som inte går på
+            skolan får ej komma. Gå in och läs informationen noggrant!</h3>
+        <div class="container">
+
+            <div class="container-time">
+                <h2 class="heading">Tid:</h2>
+                <h3 class="heading-days">Fredag 29/10/2021</h3>
+                <p class="info">18 00 (Öppnar)</p>
+                <p class="info">22 00 (Stänger vi dörarna)</p>
+                <p class="info">00 00 (Grillar Vi)</p>
+                <p class="info">08 00(Slut för dagen)</p>
+
+                <hr id="break">
+
+                <h4 class="heading-phone"><span id="spaces-left-span">0/64</span> platser bokade</h4>
+                <p class="info">Förnamn och Efternamn samt bordsnummer måste fyllas inga konstiga namn annars ogiltig
+                    bokning.</p>
+                <br>
+                <p class="info">För avbokning eller byta plats vänligen maila:</p>
+                <p class="infoo"> mike.zogheib@elev.ntig.se</p>
+                <br>
+                <p class="info">OBS. Lan blankett måste fyllas i om man är under 18 år och ta med den till lanet, ta
+                    också med Nti kortet den man använder för öppna dörrarna.</p>
+                <br>
+                <p class="info">Nedan hittar ni lediga platser.</p>
+            </div>
+
+            <div class="container-form">
+                <form onsubmit="sendMail();return false" action="#" target="_top" method="POST" enctype="text/email/tel">
+                    <h2 class="heading heading-yellow">Boka Plats</h2>
+
+                    <div class="form-field">
+                        <p class="info">Namn:</p>
+                        <input id="name" type="text" name="namn" placeholder="Full Name">
+                    </div>
+                    <!-- <div class="form-field">
+                        <p class="info">Email:</p>
+                        <input id="email" type="email" name="email" placeholder="Email">
+                    </div> -->
+                    <div class="form-field">
+                        <p class="info">Mobilnummer:</p>
+                        <input id="tel" type="tel" name="telefon nummer" placeholder="Mobilnummer">
+                    </div>
+                    <div class="form-field">
+                        <p class="info">Bordsnummer:</p>
+                        <select id="bordnummer"  name="">
+                            <option value="" selected disabled hidden>Bordsnummer</option>
+                        </select>
+                    </div>
+
+                    <p id="error-text"></p>
+                    <button class="btn">Submit</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="Con">
+            <h3 class="obs">Välj en plats och skriv in Bordsnummer på platsen du valt för boka den.</h3>
+            <h3 class="obs">Grön: Tillgänglig</h3>
+            <h3 class="obs"> Röd :Bokad</h3>
+            <!-- <div class="tables">
+                <div class="section">
+                    <ul class="row">
+                        <li>
+                            <span class="hasTooltip">
+                                <a class="">1</a>
+                                <span class="tooltipText"></span>
+                            </span>
+                        </li>
+                        <li><span class="hasTooltip"><a class="">
+                                    2
+                                </a> <span class="tooltipText"></span></span></li>
+                        <li><span class="hasTooltip"><a class="">
+                                    3
+                                </a> <span class="tooltipText"></span></span></li>
+                        <li><span class="hasTooltip"><a class="">
+                                    4
+                                </a> <span class="tooltipText"></span></span></li>
+                        <li><span class="hasTooltip"><a class="">
+                                    5
+                                </a> <span class="tooltipText"> </span></span></li>
+                        <li><span class="hasTooltip"><a class="">
+                                    6
+                                </a> <span class="tooltipText"></span></span></li>
+                        <li><span class="hasTooltip"><a class="">
+                                    7
+                                </a> <span class="tooltipText"></span></span></li>
+                        <li><span class="hasTooltip"><a class="">
+                                    8
+                                </a> <span class="tooltipText"></span></span></li>
+                    </ul>
+                    <ul class="row">
+                        <li><span><a class="">
+                                    9
+                                </a></span></li>
+                        <li><span><a class="">
+                                    10
+                                </a></span></li>
+                        <li><span class="hasTooltip"><a class="">
+                                    11
+                                </a> <span class="tooltipText"></span></span></li>
+                        <li><span class="hasTooltip"><a class="">
+                                    12
+                                </a> <span class="tooltipText"></span></span></li>
+                        <li><span class="hasTooltip"><a class="">
+                                    13
+                                </a> <span class="tooltipText"></span></span></li>
+                        <li><span class="hasTooltip"><a class="">
+                                    14
+                                </a> <span class="tooltipText"></span></span></li>
+                        <li><span class="hasTooltip"><a class="">
+                                    15
+                                </a> <span class="tooltipText"></span></span></li>
+                        <li><span class="hasTooltip"><a class="">
+                                    16
+                                </a> <span class="tooltipText"></span></span></li>
+                    </ul>
+                </div>
+                <div class="section">
+                    <ul class="row">
+                        <li><span><a class="">
+                                    17
+                                </a></span></li>
+                        <li><span><a class="">
+                                    18
+                                </a></span></li>
+                        <li><span><a class="">
+                                    19
+                                </a></span></li>
+                        <li><span><a class="">
+                                    20
+                                </a></span></li>
+                        <li><span><a class="">
+                                    21
+                                </a></span></li>
+                        <li><span><a class="">
+                                    22
+                                </a></span></li>
+                        <li><span><a class="">
+                                    23
+                                </a></span></li>
+                        <li><span><a class="">
+                                    24
+                                </a></span></li>
+                    </ul>
+                    <ul class="row">
+                        <li><span class="hasTooltip"><a class="">
+                                    25
+                                </a> <span class="tooltipText"></span></span></li>
+                        <li><span><a class="">
+                                    26
+                                </a></span></li>
+                        <li><span><a class="">
+                                    27
+                                </a></span></li>
+                        <li><span><a class="">
+                                    28
+                                </a></span></li>
+                        <li><span><a class="">
+                                    29
+                                </a></span></li>
+                        <li><span><a class="">
+                                    30
+                                </a></span></li>
+                        <li><span><a class="">
+                                    31
+                                </a></span></li>
+                        <li><span class="hasTooltip"><a class="">
+                                    32
+                                </a> <span class="tooltipText"></span></span></li>
+                    </ul>
+                </div>
+                <div class="section">
+                    <ul class="row">
+                        <li><span><a class="">
+                                    33
+                                </a></span></li>
+                        <li><span><a class="">
+                                    34
+                                </a></span></li>
+                        <li><span><a class="">
+                                    35
+                                </a></span></li>
+                        <li><span><a class="">
+                                    36
+                                </a></span></li>
+                        <li><span><a class="">
+                                    37
+                                </a></span></li>
+                        <li><span><a class="">
+                                    38
+                                </a></span></li>
+                        <li><span><a class="">
+                                    39
+                                </a></span></li>
+                        <li><span><a class="">
+                                    40
+                                </a></span></li>
+                    </ul>
+                    <ul class="row">
+                        <li><span class="hasTooltip"><a class="">
+                                    41
+                                </a> <span class="tooltipText"></span></span></li>
+                        <li><span><a class="">
+                                    42
+                                </a></span></li>
+                        <li><span><a class="">
+                                    43
+                                </a></span></li>
+                        <li><span><a class="">
+                                    44
+                                </a></span></li>
+                        <li><span><a class="">
+                                    45
+                                </a></span></li>
+                        <li><span><a class="">
+                                    46
+                                </a></span></li>
+                        <li><span><a class="">
+                                    47
+                                </a></span></li>
+                        <li><span class="hasTooltip"><a class="">
+                                    48
+                                </a> <span class="tooltipText"></span></span></li>
+                    </ul>
+                </div>
+                <div class="section">
+                    <ul class="row">
+                        <li title="Victor Andri"><span class="hasTooltip"><a class="taken">
+                                    49
+                                </a> <span class="tooltipText"></span></span></li>
+                        <li><span class="hasTooltip"><a class="">
+                                    50
+                                </a> <span class="tooltipText"></span></span></li>
+                        <li><span class="hasTooltip"><a class="">
+                                    51
+                                </a> <span class="tooltipText"> </span></span></li>
+                        <li><span class="hasTooltip"><a class="">
+                                    52
+                                </a> <span class="tooltipText"></span></span></li>
+                        <li><span><a class="">
+                                    53
+                                </a></span></li>
+                        <li><span><a class="">
+                                    54
+                                </a></span></li>
+                        <li><span><a class="">
+                                    55
+                                </a></span></li>
+                        <li><span><a class="">
+                                    56
+                                </a></span></li>
+                    </ul>
+                    <ul class="row">
+                        <li title="Daniel Askling"><span class="hasTooltip"><a class="taken">
+                                    57
+                                </a> <span class="tooltipText"></span></span></li>
+                        <li title="Zarah Isaksson"><span class="hasTooltip"><a class="taken">
+                                    58
+                                </a> <span class="tooltipText"></span></span></li>
+                        <li title="Isak Karlsen"><span class="hasTooltip"><a class="taken">
+                                    59
+                                </a> <span class="tooltipText"></span></span></li>
+                        <li title="Sanna Öberg"><span class="hasTooltip"><a class="taken">
+                                    60
+                                </a> <span class="tooltipText"></span></span></li>
+                        <li title="Henrik Dahlén"><span><a class="taken">
+                                    61
+                                </a></span class="tooltipText"></li>
+                        <li title="Casper Dahlberg "><span><a class="taken">
+                                    62
+                                </a></span></li>
+                        <li title="Felix Lamu"><span><a class="taken">
+                                    63
+                                </a></span></li>
+                        <li title="Aston Martin"><span class="tooltiptext"><a class="taken">
+
+                                    64
+                                </a> <span class="tooltipText"></span></span></li>
+                    </ul>
+                </div>
+            </div> -->
+        </div>
+
+    </div>
+
+    <script src="Script/register.js"></script>
+</body>
+
+</html>
