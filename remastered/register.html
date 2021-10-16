@@ -1,61 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>NTI Lan</title>
-    </head>
-    <body>
-        <div class="main-container">
-            <div class="navbar">
+<p id="timer" style="display: none;"></p>
+<div class="content-container content-container-register">
 
-                <img src="" alt="Logo" class="logo">
+    <div class="booking-form">
 
-                <div class="nav-item">Home</div>
-                <div class="nav-item">Information</div>
-                <div class="nav-item">Register</div>
-                <div class="nav-item">Contact</div>
-                <div class="nav-item">Lan Blankett</div>
+        <form name="booking-form">
+            <h1>Boka Plats</h1>
+            
+            <br>
 
-            </div>
+            <p>Namn: <input type="text" name="name" placeholder="Namn"></p>
 
-            <div class="body-container">
+            <br>
 
-                <div class="booking">
+            <p>Mobilnummer: <input type="text" name="telefon-nummer" placeholder="Mobilnummer" maxlength="10" minlength="10"></p>
 
-                    <div class="bookning-form">
+            <br>
 
-                        <form>
-                            <p>Namn: </p>
-                            <input type="text" name="name" placeholder="Namn">
+            <p>Bordsnummer: 
+            <select name="bordnummer" id="bordnummer">
+                <option value="" selected disabled hidden>Bordsnummer</option>
+            </select>
+            </p>
 
-                            <br>
+        </form>
 
-                            <p>Mobilnummer: </p>
-                            <input type="text" name="telefon-nummer" placeholder="Mobilnummer">
+        <br>
 
-                            <br>
+        <p id="error-text"></p>
+        <button class="btn book-button">Boka</button>
 
-                            <p>Bordsnummer: </p>
-                            <select name="bordnummer" id="">
-                                <option value="" selected disabled hidden>Bordsnummer</option>
-                            </select>
-                        </form>
+    </div>
 
-                        <p id="error-text"></p>
-                        <button class="btn">Submit</button>
+    <div class="booking-map">
 
-                    </div>
+    </div>
 
-                    <div class="booking-map">
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-    </body>
-</html>
+</div>
+<script class="run-after-load">
+    var script = document.createElement('script');
+    script.src = "script/register.js";
+    document.head.appendChild(script)
+</script>

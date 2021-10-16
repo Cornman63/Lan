@@ -1,0 +1,541 @@
+//#region Code from https://stackoverflow.com/a/49421832/13921835
+$size__site_content_width: 1024px;
+
+// /* Media Queries */ Not necessarily correct, edit these at will 
+$media_queries : (
+    'mobile'    : "only screen and (max-width: 667px)",
+    'tablet'    : "only screen and (min-width: 668px) and (max-width: $size__site_content_width)",
+    'desktop'   : "only screen and (min-width: ($size__site_content_width + 1))",
+    'retina2'   : "only screen and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi)",
+    'retina3'   : "only screen and (-webkit-min-device-pixel-ratio: 3) and (min-resolution: 288dpi)",
+    'landscape' : "screen and (orientation:landscape) ",    
+    'portrait'  : "screen and (orientation:portrait) "
+);
+
+@mixin for_breakpoint($breakpoints) {
+    $conditions : ();
+    @each $breakpoint in $breakpoints {
+        // If the key exists in the map
+        $conditions: append(
+            $conditions,
+            #{inspect(map-get($media_queries, $breakpoint))},
+            comma
+        );
+    }
+
+    @media #{$conditions} {
+        @content;
+    }
+
+}
+//#endregion
+
+*:not(.original-css){
+    padding: 0;
+    margin: 0;
+}
+*{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+}
+
+$navbar_height: 10vh;
+$content_height: 100vh - $navbar_height;
+$theme-color-1: rgb(134, 0, 200);
+$theme-color-2: rgb(0, 0, 0);
+$theme-color-1-lighter: lighten($theme-color-1, 10%);
+$theme-color-1-darker: darken($theme-color-1, 10%);
+$theme-color-2-lighter: lighten($theme-color-2, 7%);
+$theme-color-2-transparent: rgba(0, 0, 0, 0.6);
+
+
+
+$border-radius-value: 50px;
+
+html{
+
+    // overflow: hidden;
+    overflow-x: hidden;
+
+    body{
+
+        width: 100vw;
+        height: 100vh;
+
+        background-color: $theme-color-1;
+
+        @at-root #discord-server{
+            position: fixed;
+            right: 2em;
+            bottom: 2em;
+        
+            width: 15em;
+        
+            background-color: $theme-color-2-lighter;
+            padding: 1em;
+            border-radius: 10px;
+            
+            @include for_breakpoint(mobile){
+                display: none;
+            }
+        }
+
+        div.main-container{
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            min-height: 100%;
+            
+
+            div.navbar{
+                height: $navbar_height;
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: left;
+                align-items: center;
+                background-color: $theme-color-2;
+
+                @include for_breakpoint(mobile){
+                    display: none;
+                }
+
+                div.logo-container{
+                    width: 100%;
+                    height: 100%;
+                    margin: 0 3%;
+
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    img.logo{
+                        width: 100%;
+                        // width: 17vw;
+                        // height: fit-content;
+                    }
+                }
+
+
+                .nav-item{
+
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    width: 77%;
+                    height: 100%;
+
+                    background-color: $theme-color-2-lighter;
+
+                    gap: 40px;
+
+                    text-decoration: none;
+                    font-size: 150%;
+                    
+                    // color: white;
+
+                    &:hover{
+                        background-color: $theme-color-1;
+
+                        // transform: translateY(10px);
+                    }
+                    &:active{
+                        background-color: $theme-color-1-lighter;
+                    }
+
+                    &.nav-item-highlighted{
+                        background-color: $theme-color-1;
+                    }
+                }
+
+                :nth-child(2){
+                    border-bottom-left-radius: $border-radius-value;
+                }
+
+            }
+
+            div.navbar-mobile{
+                height: $navbar_height;
+                width: 100%;
+
+                background-color: $theme-color-2;
+
+                display: none;
+                @include for_breakpoint(mobile){
+                    display: flex;
+                }
+                justify-content: center;
+                align-items: center;
+                flex-direction: row;
+
+                div.logo-container-mobile{
+                    flex: 2;
+
+                    width: 100%;
+                    height: 100%;
+                    margin: 0 3%;
+
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    img.logo{
+                        width: 100%;
+                        // width: 17vw;
+                        // height: fit-content;
+                    }
+                }
+
+                div.current-nav-item{
+                    flex: 2;
+                    text-align: center  ;
+                }
+
+                div.menu-open-button{
+
+                    flex: 1;
+                    width: 2em;
+                    height: 2em;
+                    text-align: center;
+
+                    img.menu{
+                        height: 100%;
+                    }
+                    &:focus-within{
+                        filter: brightness(0) saturate(100%) invert(14%) sepia(76%) saturate(6420%) hue-rotate(280deg) brightness(79%) contrast(118%);
+                    }
+                }
+
+                @at-root .mobile-menu-container{
+                    $mobile-menu-font-size: 180%;
+
+                    width: 100vw;
+                    position: absolute;
+                    top: $navbar_height;
+                    background-color: $theme-color-2;
+                    text-align: center;
+
+                    height: $content_height;
+
+                    display: flex;
+                    justify-content: space-evenly;
+                    align-items: center;
+                    flex-direction: column;
+
+                    font-size: $mobile-menu-font-size;
+
+                    .menu-item{
+                        background-color: $theme-color-1;
+                        padding: 0.3em;
+                        border-radius: 20px;
+                        width: 80%;
+
+                        &.menu-item-highlighted{
+                            background-color: lighten($theme-color-1, 30%);
+                        }
+                    }
+
+                }
+                
+            }
+
+            div.body-container{
+
+                min-height: $content_height;
+                width: 100%;
+
+                background-image: url(https://www.newlightwc.org/x/cdn/?https://storage.googleapis.com/production-homestead-v1-0-9/049/25049/t7RbyTHz/75f24d3764224b1ea8d1891193e37cde);
+
+                @include for_breakpoint(mobile){
+                    background:
+                    linear-gradient($theme-color-2-transparent,$theme-color-2-transparent ),
+                        url(https://www.newlightwc.org/x/cdn/?https://storage.googleapis.com/production-homestead-v1-0-9/049/25049/t7RbyTHz/75f24d3764224b1ea8d1891193e37cde);
+
+                }
+
+                background-size: cover;
+                background-attachment: fixed;
+                background-repeat: no-repeat;
+
+                div.content-container{
+
+                    height: 90%;
+                    // width: 78%;
+                    margin: 2%;
+                    padding: 3%;
+                    background-color: $theme-color-2-transparent;
+                    @include for_breakpoint(mobile){
+                        background: none;
+                    }
+                    
+
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+
+                    border-radius: $border-radius-value;
+
+
+                    &.content-container-information,&.content-container-home{
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                    }
+
+                    &.content-container-register{
+                        flex-wrap: wrap;
+                        gap: 2em;
+                    }
+
+                    div.content-text{
+                        
+                        height: 47%;
+                        width: 90%;
+
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+
+                        margin-bottom: 3%;
+
+                        gap: 40px;
+
+                        // color: white;
+                        font-size: 150%;
+                        @include for_breakpoint(mobile){
+                            font-size: 100%;
+                        }
+
+                        text-align: center;
+
+                        div.regbtn{
+
+                            width: 10em;
+                            height: 5em;
+
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+
+                            background-color: $theme-color-1;
+                            border-radius: $border-radius-value;
+
+                            &:hover{
+                                background-color: $theme-color-1-darker;
+                            }
+
+                            &:active{
+                                background-color: $theme-color-1-lighter;
+                            }
+
+                        }
+
+                    }
+
+                    div.img-container{
+
+                        display: grid;
+                        grid-template-columns: repeat(3, 1fr);
+                        grid-template-rows: repeat(2, 1fr);
+
+                        column-gap: 2em;
+                        row-gap: 2em;
+
+                        img{
+                            width: 100%;
+                        }
+
+                        // display: flex;
+                        // flex-direction: column;
+                        // justify-content: center;
+                        // align-items: center;
+
+                        // height: 50%;
+                        // width: 90%;
+
+                        // div.content-img{
+
+                        //     height: 97%;
+                        //     width: 30%;
+                            
+                        //     display: flex;
+                        //     flex-direction: row;
+                        //     align-items: center;
+                        //     justify-content: center;
+    
+                        //     margin-bottom: 4%;
+    
+                        //     img.lan-pictures{
+    
+                        //         height: 30%;
+                        //         width: 100%;
+    
+                        //         display: flex;
+                        //         flex-direction: column;
+                        //         align-items: center;
+                        //         justify-content: space-evenly;
+    
+                        //         margin: 0 4%;
+    
+                        //     }
+                        // }
+
+                    }
+
+                    div.booking-form{
+
+                        padding: 1em;
+                        border: dashed 2px $theme-color-1;
+                        border-radius: $border-radius-value / 2;
+
+                        font-size: xx-large;
+                        @include for_breakpoint(mobile){
+                            font-size: 80%;
+                        }
+
+                        p{
+                            input{
+                                background-color: transparent;
+                                border: none;
+                                border-bottom: 2px solid black;
+                                color: white;
+                                text-align: center;
+                                font-size: x-large;
+                                @include for_breakpoint(mobile){
+                                    font-size: 100%;
+                                }
+
+                                &:focus{
+                                    outline: none;
+                                }
+                            }
+                        }
+
+                        select#bordnummer,option{
+                            color: black;
+                            font-size: x-large;
+                            @include for_breakpoint(mobile){
+                                font-size: 100%;
+                            }
+                        }
+
+                        button.btn{
+                            background-color: $theme-color-1;
+                            border: none;
+
+                            padding: 1em 4em;
+
+                            border-radius: $border-radius-value;
+
+                            &:hover{
+                                background-color: $theme-color-1-darker;
+                            }
+
+                            &:active{
+                                background-color: $theme-color-1-lighter;
+                            }
+                            
+                        }
+
+                    }
+
+                    div.booking-map{
+                        --map-size-multiplier: 1;
+                        @include for_breakpoint(mobile){
+                            --map-size-multiplier: 0.6;
+                        }
+
+                        .section:not(:first-child) {
+                            margin-top: 1px;
+                        }
+                        .tables{
+                            ul{
+                                list-style-type: none;
+                                padding: 0;
+                                margin: 0;
+                                height: auto;
+                                display: flex;
+                                flex-direction: row;
+
+                                li a{
+                                    position: relative;
+                                    color: black;
+                                    text-decoration: none;
+                                    display: inline-block;
+                                    font-size: calc(20px * var(--map-size-multiplier));
+                                    padding: calc(15px * var(--map-size-multiplier));
+                                    background-color: #00b402;
+                                    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+                                    width: calc(30px * var(--map-size-multiplier));
+                                    height: calc(30px * var(--map-size-multiplier));
+                                    text-align: center;
+                                    line-height: calc(30px * var(--map-size-multiplier));
+                            
+                                    &:hover{
+                                        background-color: #33c335;
+                                        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+                                        cursor: pointer;
+                                        z-index: 1;
+                                    }
+                            
+                                    &.booked{
+                                        background-color: #4b0082;
+                                    }
+    
+                                    &.selected{
+                                        box-shadow: inset 0px 0px 0px 5px #4b0082;
+                                    }
+    
+                                    &.taken{
+                                        background-color: #750000;
+                                        cursor: initial;
+                            
+                                        &:hover{
+                                            background-color: #913333;
+                                        }
+                                    }
+                                }
+                            }
+                        }                        
+                    }
+
+                    div.people-to-contact{
+                        width: 100%;
+                        display: flex;
+                        flex-direction: row;
+                        @include for_breakpoint(mobile){
+                            flex-wrap: wrap;
+                        }
+
+                        div.contact-person{
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+
+                            width: 100%;
+
+                            margin: 1em; 
+
+                            img{
+                                width: 40%;
+                            }
+                            
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.hidden{
+    display: none;
+}
+
