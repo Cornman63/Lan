@@ -1,0 +1,48 @@
+<div class="content-container content-container-home">
+
+    <div class="content-text">
+
+        <h1>LAN på NTI Södertörn</h1>
+        <h2>Fredag - Lördag | 29/10/2021 v.43</h2>
+        <p id="timer"></p>
+
+        
+        <div class="regbtn" onclick="load_document('./register.html',document.getElementsByClassName('body-container')[0])">
+            <p>Boka plats nu!</p>
+        </div>
+
+    </div>
+
+    <div class="img-container"></div>
+
+    <script class="run-after-load">
+        function generate_images(){
+            let images = [
+                "./img/1.jpg",
+                "./img/2.jpg",
+                "./img/3.jpg",
+                "./img/4.jpg",
+                "./img/5.jpg",
+                "./img/6.jpg"
+            ]
+
+            let dest = document.querySelector('div.img-container');
+            images.forEach(e => {
+                let image_object = document.createElement("img");
+
+                image_object.src = e;
+                image_object.alt = e;
+                image_object.classList.add("lan-pictures")
+
+                dest.appendChild(image_object)
+            });
+        }
+        generate_images()
+    </script>
+    
+</div>
+<script class="run-after-load">
+    var script = document.createElement('script');
+    script.src = "script/timer.js";
+    document.head.appendChild(script)
+</script>

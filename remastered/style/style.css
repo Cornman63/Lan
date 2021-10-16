@@ -1,0 +1,544 @@
+*:not(.original-css) {
+  padding: 0;
+  margin: 0;
+}
+
+* {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: white;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+html body {
+  width: 100vw;
+  height: 100vh;
+  background-color: #8600c8;
+}
+
+#discord-server {
+  position: fixed;
+  right: 2em;
+  bottom: 2em;
+  width: 15em;
+  background-color: #121212;
+  padding: 1em;
+  border-radius: 10px;
+}
+
+@media only screen and (max-width: 667px) {
+  #discord-server {
+    display: none;
+  }
+}
+
+html body div.main-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  min-height: 100%;
+}
+
+html body div.main-container div.navbar {
+  height: 10vh;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: black;
+}
+
+@media only screen and (max-width: 667px) {
+  html body div.main-container div.navbar {
+    display: none;
+  }
+}
+
+html body div.main-container div.navbar div.logo-container {
+  width: 100%;
+  height: 100%;
+  margin: 0 3%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+html body div.main-container div.navbar div.logo-container img.logo {
+  width: 100%;
+}
+
+html body div.main-container div.navbar .nav-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 77%;
+  height: 100%;
+  background-color: #121212;
+  gap: 40px;
+  text-decoration: none;
+  font-size: 150%;
+}
+
+html body div.main-container div.navbar .nav-item:hover {
+  background-color: #8600c8;
+}
+
+html body div.main-container div.navbar .nav-item:active {
+  background-color: #a800fb;
+}
+
+html body div.main-container div.navbar .nav-item.nav-item-highlighted {
+  background-color: #8600c8;
+}
+
+html body div.main-container div.navbar :nth-child(2) {
+  border-bottom-left-radius: 50px;
+}
+
+html body div.main-container div.navbar-mobile {
+  height: 10vh;
+  width: 100%;
+  background-color: black;
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+@media only screen and (max-width: 667px) {
+  html body div.main-container div.navbar-mobile {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+html body div.main-container div.navbar-mobile div.logo-container-mobile {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  width: 100%;
+  height: 100%;
+  margin: 0 3%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+html body div.main-container div.navbar-mobile div.logo-container-mobile img.logo {
+  width: 100%;
+}
+
+html body div.main-container div.navbar-mobile div.current-nav-item {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  text-align: center;
+}
+
+html body div.main-container div.navbar-mobile div.menu-open-button {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  width: 2em;
+  height: 2em;
+  text-align: center;
+}
+
+html body div.main-container div.navbar-mobile div.menu-open-button img.menu {
+  height: 100%;
+}
+
+html body div.main-container div.navbar-mobile div.menu-open-button:focus-within {
+  -webkit-filter: brightness(0) saturate(100%) invert(14%) sepia(76%) saturate(6420%) hue-rotate(280deg) brightness(79%) contrast(118%);
+          filter: brightness(0) saturate(100%) invert(14%) sepia(76%) saturate(6420%) hue-rotate(280deg) brightness(79%) contrast(118%);
+}
+
+.mobile-menu-container {
+  width: 100vw;
+  position: absolute;
+  top: 10vh;
+  background-color: black;
+  text-align: center;
+  height: 90vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: 180%;
+}
+
+.mobile-menu-container .menu-item {
+  background-color: #8600c8;
+  padding: 0.3em;
+  border-radius: 20px;
+  width: 80%;
+}
+
+.mobile-menu-container .menu-item.menu-item-highlighted {
+  background-color: #cb62ff;
+}
+
+html body div.main-container div.body-container {
+  min-height: 90vh;
+  width: 100%;
+  background-image: url(https://www.newlightwc.org/x/cdn/?https://storage.googleapis.com/production-homestead-v1-0-9/049/25049/t7RbyTHz/75f24d3764224b1ea8d1891193e37cde);
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+@media only screen and (max-width: 667px) {
+  html body div.main-container div.body-container {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.6)), to(rgba(0, 0, 0, 0.6))), url(https://www.newlightwc.org/x/cdn/?https://storage.googleapis.com/production-homestead-v1-0-9/049/25049/t7RbyTHz/75f24d3764224b1ea8d1891193e37cde);
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(https://www.newlightwc.org/x/cdn/?https://storage.googleapis.com/production-homestead-v1-0-9/049/25049/t7RbyTHz/75f24d3764224b1ea8d1891193e37cde);
+  }
+}
+
+html body div.main-container div.body-container div.content-container {
+  height: 90%;
+  margin: 2%;
+  padding: 3%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 50px;
+}
+
+@media only screen and (max-width: 667px) {
+  html body div.main-container div.body-container div.content-container {
+    background: none;
+  }
+}
+
+html body div.main-container div.body-container div.content-container.content-container-information, html body div.main-container div.body-container div.content-container.content-container-home {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+html body div.main-container div.body-container div.content-container.content-container-register {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 2em;
+}
+
+html body div.main-container div.body-container div.content-container div.content-text {
+  height: 47%;
+  width: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 3%;
+  gap: 40px;
+  font-size: 150%;
+  text-align: center;
+}
+
+@media only screen and (max-width: 667px) {
+  html body div.main-container div.body-container div.content-container div.content-text {
+    font-size: 100%;
+  }
+}
+
+html body div.main-container div.body-container div.content-container div.content-text div.regbtn {
+  width: 10em;
+  height: 5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #8600c8;
+  border-radius: 50px;
+}
+
+html body div.main-container div.body-container div.content-container div.content-text div.regbtn:hover {
+  background-color: #640095;
+}
+
+html body div.main-container div.body-container div.content-container div.content-text div.regbtn:active {
+  background-color: #a800fb;
+}
+
+html body div.main-container div.body-container div.content-container div.img-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  -ms-grid-rows: (1fr)[2];
+      grid-template-rows: repeat(2, 1fr);
+  -webkit-column-gap: 2em;
+          column-gap: 2em;
+  row-gap: 2em;
+}
+
+html body div.main-container div.body-container div.content-container div.img-container img {
+  width: 100%;
+}
+
+html body div.main-container div.body-container div.content-container div.booking-form {
+  padding: 1em;
+  border: dashed 2px #8600c8;
+  border-radius: 25px;
+  font-size: xx-large;
+}
+
+@media only screen and (max-width: 667px) {
+  html body div.main-container div.body-container div.content-container div.booking-form {
+    font-size: 80%;
+  }
+}
+
+html body div.main-container div.body-container div.content-container div.booking-form p input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid black;
+  color: white;
+  text-align: center;
+  font-size: x-large;
+}
+
+@media only screen and (max-width: 667px) {
+  html body div.main-container div.body-container div.content-container div.booking-form p input {
+    font-size: 100%;
+  }
+}
+
+html body div.main-container div.body-container div.content-container div.booking-form p input:focus {
+  outline: none;
+}
+
+html body div.main-container div.body-container div.content-container div.booking-form select#bordnummer, html body div.main-container div.body-container div.content-container div.booking-form option {
+  color: black;
+  font-size: x-large;
+}
+
+@media only screen and (max-width: 667px) {
+  html body div.main-container div.body-container div.content-container div.booking-form select#bordnummer, html body div.main-container div.body-container div.content-container div.booking-form option {
+    font-size: 100%;
+  }
+}
+
+html body div.main-container div.body-container div.content-container div.booking-form button.btn {
+  background-color: #8600c8;
+  border: none;
+  padding: 1em 4em;
+  border-radius: 50px;
+}
+
+html body div.main-container div.body-container div.content-container div.booking-form button.btn:hover {
+  background-color: #640095;
+}
+
+html body div.main-container div.body-container div.content-container div.booking-form button.btn:active {
+  background-color: #a800fb;
+}
+
+html body div.main-container div.body-container div.content-container div.booking-map {
+  --map-size-multiplier: 1;
+}
+
+@media only screen and (max-width: 667px) {
+  html body div.main-container div.body-container div.content-container div.booking-map {
+    --map-size-multiplier: 0.6;
+  }
+}
+
+html body div.main-container div.body-container div.content-container div.booking-map .section:not(:first-child) {
+  margin-top: 1px;
+}
+
+html body div.main-container div.body-container div.content-container div.booking-map .tables ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+html body div.main-container div.body-container div.content-container div.booking-map .tables ul li a {
+  position: relative;
+  color: black;
+  text-decoration: none;
+  display: inline-block;
+  font-size: calc(20px * var(--map-size-multiplier));
+  padding: calc(15px * var(--map-size-multiplier));
+  background-color: #00b402;
+  -webkit-transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  width: calc(30px * var(--map-size-multiplier));
+  height: calc(30px * var(--map-size-multiplier));
+  text-align: center;
+  line-height: calc(30px * var(--map-size-multiplier));
+}
+
+html body div.main-container div.body-container div.content-container div.booking-map .tables ul li a:hover {
+  background-color: #33c335;
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  cursor: pointer;
+  z-index: 1;
+}
+
+html body div.main-container div.body-container div.content-container div.booking-map .tables ul li a.booked {
+  background-color: #4b0082;
+}
+
+html body div.main-container div.body-container div.content-container div.booking-map .tables ul li a.selected {
+  -webkit-box-shadow: inset 0px 0px 0px 5px #4b0082;
+          box-shadow: inset 0px 0px 0px 5px #4b0082;
+}
+
+html body div.main-container div.body-container div.content-container div.booking-map .tables ul li a.taken {
+  background-color: #750000;
+  cursor: initial;
+}
+
+html body div.main-container div.body-container div.content-container div.booking-map .tables ul li a.taken:hover {
+  background-color: #913333;
+}
+
+html body div.main-container div.body-container div.content-container div.people-to-contact {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+@media only screen and (max-width: 667px) {
+  html body div.main-container div.body-container div.content-container div.people-to-contact {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+html body div.main-container div.body-container div.content-container div.people-to-contact div.contact-person {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  margin: 1em;
+}
+
+html body div.main-container div.body-container div.content-container div.people-to-contact div.contact-person img {
+  width: 40%;
+}
+
+.hidden {
+  display: none;
+}
+/*# sourceMappingURL=style.css.map */

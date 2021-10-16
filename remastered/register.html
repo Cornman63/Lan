@@ -1,0 +1,43 @@
+<p id="timer" style="display: none;"></p>
+<div class="content-container content-container-register">
+
+    <div class="booking-form">
+
+        <form name="booking-form">
+            <h1>Boka Plats</h1>
+            
+            <br>
+
+            <p>Namn: <input type="text" name="name" placeholder="Namn"></p>
+
+            <br>
+
+            <p>Mobilnummer: <input type="text" name="telefon-nummer" placeholder="Mobilnummer" maxlength="10" minlength="10"></p>
+
+            <br>
+
+            <p>Bordsnummer: 
+            <select name="bordnummer" id="bordnummer">
+                <option value="" selected disabled hidden>Bordsnummer</option>
+            </select>
+            </p>
+
+        </form>
+
+        <br>
+
+        <p id="error-text"></p>
+        <button class="btn book-button">Boka</button>
+
+    </div>
+
+    <div class="booking-map">
+
+    </div>
+
+</div>
+<script class="run-after-load">
+    var script = document.createElement('script');
+    script.src = "script/register.js";
+    document.head.appendChild(script)
+</script>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>NTI Lan</title>
+        <link rel="stylesheet" href="./style/style.css">
+        <script src="script/page-switcher.js" defer></script>
+        <!-- <script type="text/javascript" src="script/jquery-3.6.0.min.js"></script> -->
+    </head>
+    <body>
+        <div class="main-container">
+            <div class="navbar">
+
+                <div class="logo-container">
+                    <img src="./img/ntiLogo.png" alt="Logo" class="logo" onclick="load_document('null#');">
+                </div>
+
+                <div class="nav-item" fn="null">Home</div>
+                <div class="nav-item" fn="./information.html">Information</div>
+                <div class="nav-item" fn="./register.html">Register</div>
+                <div class="nav-item" fn="./contact.html">Contact</div>
+                <div class="nav-item" onclick="window.location.href = 'lan_lapp.docx'">Lan Blankett</div>
+
+            </div>
+            
+            <script>
+                function togglePhoneMenu(){
+                    document.querySelector('.menu-open-button').classList.toggle("change");
+
+                    let mobile_menu_container = document.querySelector(".mobile-menu-container")
+
+                    if (mobile_menu_container.classList.contains("hidden")){
+                        mobile_menu_container.classList.remove("hidden")
+                    }
+                    else{
+                        mobile_menu_container.classList.add("hidden")
+                    }
+                };
+            </script>
+
+            <div class="navbar-mobile">
+                
+                <div class="logo-container-mobile">
+                    <img src="./img/ntiLogo.png" alt="Logo" class="logo" onclick="load_document('null#');document.querySelector('.current-nav-item').innerHTML = 'Home'">
+                </div>
+
+                <div class="current-nav-item">Home</div>
+
+                <div class="menu-open-button" onclick="togglePhoneMenu()">
+                    <img src="./img/menu.jpg" alt="" class="menu">
+                </div>
+            </div>
+
+
+
+            <div class="body-container"> <!-- stuff is gonna get generated in here by JS --> </div>
+
+        </div>
+
+        <a href="https://discord.gg/wUWnjUszNX" target="_blank">
+            <img src="./img/joinDiscord.png" alt="Join discord button" id="discord-server">
+        </a>
+
+
+        <div id="mobile-menu" class="mobile-menu-container hidden">
+            <div class="menu-item" fn="null">Home</div>
+            <div class="menu-item" fn="./information.html">Information</div>
+            <div class="menu-item" fn="./register.html">Register</div>
+            <div class="menu-item" fn="./contact.html">Contact</div>
+            <div class="menu-item" onclick="window.location.href = 'lan_lapp.docx'">Lan Blankett</div>
+            <div class="menu-item" onclick="window.open('https://discord.gg/wUWnjUszNX')">Discord</div>
+        </div>
+    </body>
+</html>
