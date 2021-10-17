@@ -60,10 +60,18 @@
 
         </div>
 
+
+        <script>
+            function hide_discord_button(){
+                let a = ["#discord-server", "#discord-server-close"].forEach(e => {
+                    document.querySelector(e).style.display = "none"
+                })
+            }
+        </script>
         <a href="https://discord.gg/wUWnjUszNX" target="_blank">
             <img src="./img/joinDiscord.png" alt="Join discord button" id="discord-server">
         </a>
-
+        <img src="img/close-button-png-30221.png" alt="close button" id="discord-server-close" onclick="hide_discord_button()">
 
         <div id="mobile-menu" class="mobile-menu-container hidden">
             <div class="menu-item" fn="null">Home</div>

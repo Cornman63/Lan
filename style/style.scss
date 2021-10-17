@@ -64,16 +64,29 @@ html{
 
         background-color: $theme-color-1;
 
+        $discord-server-button-height: 5em;
         @at-root #discord-server{
             position: fixed;
-            right: 2em;
-            bottom: 2em;
+            right: 1em;
+            bottom: 1em;
         
-            width: 15em;
-        
+            // width: 15em;
+            height: $discord-server-button-height;
+
             background-color: $theme-color-2-lighter;
             padding: 1em;
             border-radius: 10px;
+            
+            @include for_breakpoint(mobile){
+                display: none;
+            }
+        }
+        @at-root #discord-server-close{
+            position: fixed;
+            right: 0em;
+            bottom: $discord-server-button-height + 2em;
+        
+            width: 2em;
             
             @include for_breakpoint(mobile){
                 display: none;
