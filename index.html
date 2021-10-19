@@ -30,13 +30,16 @@
                 function togglePhoneMenu(){
                     document.querySelector('.menu-open-button').classList.toggle("change");
 
-                    let mobile_menu_container = document.querySelector(".mobile-menu-container")
+                    let mobile_menu_container = document.querySelector(".mobile-menu-container");
+                    let body_container = document.querySelector(".body-container");
 
                     if (mobile_menu_container.classList.contains("hidden")){
                         mobile_menu_container.classList.remove("hidden")
+                        body_container.classList.add("mobile-navbar-down")
                     }
                     else{
                         mobile_menu_container.classList.add("hidden")
+                        body_container.classList.remove("mobile-navbar-down")
                     }
                 };
             </script>

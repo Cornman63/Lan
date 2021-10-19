@@ -228,7 +228,7 @@ html{
                     background-color: $theme-color-2;
                     text-align: center;
 
-                    height: $content_height;
+                    // height: $content_height;
 
                     display: flex;
                     justify-content: space-evenly;
@@ -236,6 +236,9 @@ html{
                     flex-direction: column;
 
                     font-size: $mobile-menu-font-size;
+                    
+                    gap: 0.5em;
+                    padding-bottom: $navbar_height;
 
                     .menu-item{
                         background-color: $theme-color-1;
@@ -269,6 +272,11 @@ html{
                 background-size: cover;
                 background-attachment: fixed;
                 background-repeat: no-repeat;
+
+
+                &.mobile-navbar-down > div.page{
+                    display: none;
+                }
 
                 div.content-container{
 
