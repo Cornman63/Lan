@@ -351,7 +351,10 @@ html{
 
                         display: grid;
                         grid-template-columns: repeat(3, 1fr);
-                        grid-template-rows: repeat(2, 1fr);
+                        @include for_breakpoint(mobile){
+                            grid-template-columns: repeat(1, 1fr);
+                        }
+                        // grid-template-rows: repeat(2, 1fr);
 
                         column-gap: 2em;
                         row-gap: 2em;

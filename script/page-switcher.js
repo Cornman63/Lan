@@ -17,8 +17,8 @@ async function load_document(fn, dest, ignore_same_page=false){
     if (dest == undefined || dest == null){dest = load_document_default_dest;}
 
     // Step 1: Check if it should load in the first place.
-    if (dest.getAttribute("loaded") == `${fn}`){
-
+    let container_loaded = dest.getElementsByClassName(`page-${fn}`)[0]
+    if (container_loaded && container_loaded.style.display != "none"){
         if (!ignore_same_page){
             console.log("Same page, ignoring request");
             return;
@@ -26,14 +26,7 @@ async function load_document(fn, dest, ignore_same_page=false){
         console.log("Was same page, but ignore_same_page is true")
     }
 
-    // Step 2: Check cache.
-    if (`${fn}` in loaded_pages_cache){
-        
-        console.log("Using cache!");
-        replacement_html = loaded_pages_cache[`${fn}`];
-    }
-    
-    // Step 3: Make a new request
+    // Step 2: Make a new request
     if (replacement_html == null){
 
         let response = await fetch((fn == null) ? load_document_default_file_name : fn)
@@ -47,24 +40,59 @@ async function load_document(fn, dest, ignore_same_page=false){
 
     // Final step: Switch out data
     if (replacement_html != null){
-        // Replace content
-        dest.innerHTML = replacement_html;
+        // Hide all pages
+        document.querySelectorAll(".page").forEach(e => {
+            e.style.display = "none"
+        })
 
-        // Fix classes and "loaded" property
-        if (dest.getAttribute("loaded") != null){
-            dest.classList.remove(`document-${dest.getAttribute("loaded")}`)
+        // Display the selected page or create it
+        if (container_loaded){
+            container_loaded.style.display = ""
         }
-        dest.classList.add(`document-${fn}`)
-        dest.setAttribute("loaded", `${fn}`);
+        else{
+            let dest2 = document.createElement("div")
+            dest2.classList.add("page", "page-" + fn)
+    
+            dest2.innerHTML = replacement_html
+            dest.appendChild(dest2)
 
-        // Save to cache
-        loaded_pages_cache[`${fn}`] = replacement_html;
+            // Run scripts
+            Array.from(dest.querySelectorAll(".run-after-load:not(.done)")).forEach(i => {
+                if (i.getAttribute("src")){
+                    let loaded_script = document.head.querySelector(`script[src="${i.getAttribute("src")}"]`);
+                    if (loaded_script){
+                        if (i.innerHTML){
+                            eval(i.innerHTML);
+                        }
+                    }
+                    else{
+                        var script = document.createElement('script');
+                        script.src = i.getAttribute("src");
+                        document.head.appendChild(script)
+
+                        if (i.innerHTML){
+                            script.onload = function(){
+                                eval(i.innerHTML);
+                            }
+                        }
+                    }
+                }
+                else{
+                    if (i.innerHTML){
+                        eval(i.innerHTML);
+                    }
+                }
+
+                i.classList.add("done")
+            });
+        }
 
         // Update URL
         history.pushState({},null,
             (fn == null) ? window.location.pathname : `?d=${fn}`
         );
         
+        // Update navbars
         document.querySelectorAll(".nav-item[fn]").forEach(e => {
             e.classList.remove("nav-item-highlighted")
         })
@@ -75,15 +103,12 @@ async function load_document(fn, dest, ignore_same_page=false){
         })
         document.querySelector(`.menu-item[fn="${fn}"]`).classList.add("menu-item-highlighted")
 
-        Array.from(dest.getElementsByClassName("run-after-load")).forEach(i => {
-            eval(i.innerHTML);
-        });
-
         return 0;
     }
 
     return -1;
 };
+
 
 load_document(uri_parameters.get("d"), null, true)
 

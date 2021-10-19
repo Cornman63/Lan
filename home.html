@@ -13,36 +13,18 @@
 
     </div>
 
-    <div class="img-container"></div>
+    <div class="img-container img-container-home"></div>
 
-    <script class="run-after-load">
-        function generate_images(){
-            let images = [
-                "./img/1.jpg",
-                "./img/2.jpg",
-                "./img/3.jpg",
-                "./img/4.jpg",
-                "./img/5.jpg",
-                "./img/6.jpg"
-            ]
-
-            let dest = document.querySelector('div.img-container');
-            images.forEach(e => {
-                let image_object = document.createElement("img");
-
-                image_object.src = e;
-                image_object.alt = e;
-                image_object.classList.add("lan-pictures")
-
-                dest.appendChild(image_object)
-            });
-        }
-        generate_images()
+    <script src="script/gallery.js" class="run-after-load">
+        generate_images(
+            ".img-container-home",[
+            "./img/1.jpg",
+            "./img/2.jpg",
+            "./img/3.jpg",
+            "./img/4.jpg",
+            "./img/5.jpg",
+            "./img/6.jpg"
+        ]);
     </script>
-    
+    <script src="script/timer.js" class="run-after-load"></script>
 </div>
-<script class="run-after-load">
-    var script = document.createElement('script');
-    script.src = "script/timer.js";
-    document.head.appendChild(script)
-</script>
