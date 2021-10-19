@@ -94,19 +94,30 @@ function createTable(){
                 index += 1
 
                 let li = document.createElement("li")
-                li.title = booking[index]
+
+                let span = document.createElement("span")
 
                 let a = document.createElement("a")
-                if (booking[index] != ""){
-                    a.classList.add("taken")
-                }
                 a.innerHTML = index
                 a.onclick = function() {
                     document.querySelector(`#bordnummer > option[value="${this.innerHTML}"]`).selected = true;
-                    // document.querySelector("div.container").scrollIntoView();
+                }
+
+                span.appendChild(a)
+
+                if (booking[index] != ""){
+                    span.classList.add("hasTooltip")
+                    a.classList.add("taken")
+
+                    let span_tooltip = document.createElement("span");
+
+                    span_tooltip.classList.add('tooltipText')
+                    span_tooltip.innerText = booking[index]
+
+                    span.appendChild(span_tooltip)
                 }
                 
-                li.appendChild(a)
+                li.appendChild(span)
                 row_ul.appendChild(li)
             }
 

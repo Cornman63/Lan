@@ -48,13 +48,9 @@ $theme-color-1-darker: darken($theme-color-1, 10%);
 $theme-color-2-lighter: lighten($theme-color-2, 7%);
 $theme-color-2-transparent: rgba(0, 0, 0, 0.6);
 
-
-
 $border-radius-value: 50px;
 
 html{
-
-    // overflow: hidden;
     overflow-x: hidden;
 
     body{
@@ -476,41 +472,69 @@ html{
                                 display: flex;
                                 flex-direction: row;
 
-                                li a{
-                                    position: relative;
-                                    color: black;
-                                    text-decoration: none;
-                                    display: inline-block;
-                                    font-size: calc(20px * var(--map-size-multiplier));
-                                    padding: calc(15px * var(--map-size-multiplier));
-                                    background-color: #00b402;
-                                    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-                                    width: calc(30px * var(--map-size-multiplier));
-                                    height: calc(30px * var(--map-size-multiplier));
-                                    text-align: center;
-                                    line-height: calc(30px * var(--map-size-multiplier));
-                            
-                                    &:hover{
-                                        background-color: #33c335;
-                                        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-                                        cursor: pointer;
-                                        z-index: 1;
+                                li{
+                                    span.hasTooltip {
+                                        position: relative;
+
+                                        &:hover span.tooltipText{
+                                            visibility: visible;
+                                            opacity: 1;
+                                        }
+
+                                        span.tooltipText {
+                                            pointer-events: none;
+                                            visibility: hidden;
+                                            width: 120px;
+                                            background-color: #750000;
+                                            color: white;
+                                            text-align: center;
+                                            border-radius: 5px;
+                                            padding: 10px;
+                                            position: absolute;
+                                            z-index: 1;
+                                            bottom: 220%;
+                                            left: 50%;
+                                            margin-left: -70px;
+                                            opacity: 0;
+                                            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+                                        }
                                     }
-                            
-                                    &.booked{
-                                        background-color: #4b0082;
-                                    }
-    
-                                    &.selected{
-                                        box-shadow: inset 0px 0px 0px 5px #4b0082;
-                                    }
-    
-                                    &.taken{
-                                        background-color: #750000;
-                                        cursor: initial;
-                            
+                                    a{
+                                        position: relative;
+                                        color: black;
+                                        text-decoration: none;
+                                        display: inline-block;
+                                        font-size: calc(20px * var(--map-size-multiplier));
+                                        padding: calc(15px * var(--map-size-multiplier));
+                                        background-color: #00b402;
+                                        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+                                        width: calc(30px * var(--map-size-multiplier));
+                                        height: calc(30px * var(--map-size-multiplier));
+                                        text-align: center;
+                                        line-height: calc(30px * var(--map-size-multiplier));
+                                
                                         &:hover{
-                                            background-color: #913333;
+                                            background-color: #33c335;
+                                            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+                                            cursor: pointer;
+                                            z-index: 1;
+                                        }
+                                
+                                        &.booked{
+                                            background-color: #4b0082;
+                                        }
+        
+                                        &.selected{
+                                            box-shadow: inset 0px 0px 0px 5px #4b0082;
+                                        }
+        
+                                        &.taken{
+                                            background-color: #750000;
+                                            cursor: initial;
+                                
+                                            &:hover{
+                                                background-color: #913333;
+                                            }
                                         }
                                     }
                                 }

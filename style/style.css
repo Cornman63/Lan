@@ -469,6 +469,34 @@ html body div.main-container div.body-container div.content-container div.bookin
           flex-direction: row;
 }
 
+html body div.main-container div.body-container div.content-container div.booking-map .tables ul li span.hasTooltip {
+  position: relative;
+}
+
+html body div.main-container div.body-container div.content-container div.booking-map .tables ul li span.hasTooltip:hover span.tooltipText {
+  visibility: visible;
+  opacity: 1;
+}
+
+html body div.main-container div.body-container div.content-container div.booking-map .tables ul li span.hasTooltip span.tooltipText {
+  pointer-events: none;
+  visibility: hidden;
+  width: 120px;
+  background-color: #750000;
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+  padding: 10px;
+  position: absolute;
+  z-index: 1;
+  bottom: 220%;
+  left: 50%;
+  margin-left: -70px;
+  opacity: 0;
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
 html body div.main-container div.body-container div.content-container div.booking-map .tables ul li a {
   position: relative;
   color: black;
