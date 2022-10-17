@@ -1,4 +1,4 @@
-var countDownDate = new Date("Apr 08, 2022 18:00:00").getTime();
+var countDownDate = new Date("Oct 28, 2022 18:00:00").getTime();
 
 function updateCountDown() {
     var currentDate = new Date().getTime();
