@@ -10,6 +10,15 @@
         <script src="script/page-switcher.js" defer></script>
     </head>
     <body>
+        <script defer>
+            //funny mike easter egg hehehehehe
+            var mainLoopId = setInterval(function(){
+                if (new Date("Oct 28, 2022 18:00:00").getTime() - new Date().getTime() <= 0){
+                    document.getElementById("mike").style.display = "inline"
+                }
+            }, 1000);
+        </script>
+
         <div class="main-container">
             <div class="navbar">
 
@@ -85,5 +94,14 @@
             <div class="menu-item" onclick="window.location.href = 'lan_lapp.docx'">Lan Blankett</div>
             <div class="menu-item" onclick="window.open('https://discord.gg/wUWnjUszNX')">Discord</div>
         </div>
+
+        <img id="mike" src="https://cdn.discordapp.com/attachments/633644941830258708/1035462109422694420/ezgif.com-gif-maker.gif" alt="" style="
+            display: none;
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+        ">
     </body>
 </html>
